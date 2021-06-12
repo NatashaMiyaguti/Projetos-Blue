@@ -88,4 +88,4 @@ elif contador == 5:
 else:
   print ('"Você é inocente"')
 
-print (' Fim de jogo!!!')
+print ('\n Fim de jogo!!!')
