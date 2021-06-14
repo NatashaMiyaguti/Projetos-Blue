@@ -32,22 +32,22 @@ if pergunta1 != 'S' and pergunta1 != 'N':
   exit()
 
 pergunta2 = str(input('Você esteve no local do crime? [S/N]:')).strip().upper()[0]
-if pergunta1 != 'S' and pergunta1 != 'N':
+if pergunta2 != 'S' and pergunta2 != 'N':
   print ('Resposta inválida')
   exit()
 
 pergunta3 = str(input('Você mora perto da vítima? [S/N]:')).strip().upper()[0]
-if pergunta1 != 'S' and pergunta1 != 'N':
+if pergunta3 != 'S' and pergunta3 != 'N':
   print ('Resposta inválida')
   exit()
 
 pergunta4 = str(input('Você devia para a vítima? [S/N]:')).strip().upper()[0]
-if pergunta1 != 'S' and pergunta1 != 'N':
+if pergunta4 != 'S' and pergunta4 != 'N':
   print ('Resposta inválida')
   exit()
 
 pergunta5 = str(input('Você já trabalhou com a vítima? [S/N]: ')).strip().upper()[0]
-if pergunta1 != 'S' and pergunta1 != 'N':
+if pergunta5 != 'S' and pergunta5 != 'N':
   print ('Resposta inválida')
   exit()
 
