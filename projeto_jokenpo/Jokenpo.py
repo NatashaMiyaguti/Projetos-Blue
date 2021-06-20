@@ -1,100 +1,100 @@
 from random import randint
 from time import sleep
-
+from rich import print
 
 while True:
     cont_computador = cont_jogagor = empate = 0
 
     jogo = str(input('\nVamos jogar Jokenpo? [S/N]: ')).strip().upper()[0]
     if jogo == 'N':
-        print ('Até a próxima!')
+        print ('[blue]Até a próxima![blue]')
         break
     if jogo != 'S' and jogo != 'N':
-        print ('Resposta inválida')
+        print ('[yellow]Resposta inválida[yellow]:confounded_face:')
         break
 
     rodadas = int(input('\nDigite quantas rodadas iremos jogar: '))
 
     for n in range(rodadas): 
         sleep(1)
-        print('\nVamos começar a rodada!')
+        print('\n[blue]Vamos começar a rodada![blue]')
         computador = randint(1,3)
         sleep(2)
-        print('\n[1] Pedra')
+        print('\n[yellow][1] Pedra[yellow] :raised_fist:')
         sleep(1)
-        print('[2] Papel')
+        print('[yellow][2] Papel[yellow] :raised_hand:')
         sleep(1)
-        print('[3] Tesoura')
+        print('[yellow][3] Tesoura[yellow] :victory_hand:')
         sleep(1)
         escolha = int(input('\nQual opção você escolhe:'))
         sleep(1)
         
         if escolha == 1 and computador == 1:
             empate += 1
-            print(f'\nVocê escolheu [{escolha}] Pedra, e o computador escolheu [1] Pedra.')
+            print(f'\nVocê escolheu [{escolha}] Pedra:raised_fist:, e o computador escolheu [1] Pedra:raised_fist:.')
             sleep(2)
-            print('Deu empate!!!'.center(50))
+            print('[yellow]Deu empate!!![yellow]'.center(50))
         elif escolha == 1 and computador == 2:
             cont_computador += 1
-            print(f'\nVocê escolheu [{escolha}] Pedra, e o computador escolheu [2] Papel.')
+            print(f'\nVocê escolheu [{escolha}] Pedra:raised_fist:, e o computador escolheu [2] Papel:raised_hand:.')
             sleep(2)
-            print ('Você perdeu!!!'.center(50))
+            print ('[red]Você perdeu!!![red]'.center(50))
         elif escolha == 1 and computador == 3:
             cont_jogagor += 1
-            print(f'\nVocê escolheu [{escolha}] Pedra e o computador escolheu [3] Tesoura.')
+            print(f'\nVocê escolheu [{escolha}] Pedra:raised_fist: e o computador escolheu [3] Tesoura:victory_hand:.')
             sleep(2)
-            print('Você ganhou!!!'.center(50))
+            print('[green]Você ganhou!!![green]'.center(50))
         
         elif escolha == 2 and computador == 2:
             empate += 1
-            print(f'\nVocê escolheu [{escolha}] Papel, e o computador escolheu [2] Papel.')
+            print(f'\nVocê escolheu [{escolha}] Papel:raised_hand:, e o computador escolheu [2] Papel:raised_hand:.')
             sleep(2)
-            print('Deu empate!!!'.center(50))
+            print('[yellow]Deu empate!!![yellow]'.center(50))
         elif escolha == 2 and computador == 3:
             cont_computador +=1
-            print(f'\nVocê escolheu [{escolha}] Papel, e o computador escolheu [3] Tesoura.')
+            print(f'\nVocê escolheu [{escolha}] Papel:raised_hand:, e o computador escolheu [3] Tesoura:victory_hand:.')
             sleep(2)
-            print ('Você perdeu!!!'.center(50))
+            print ('[red]Você perdeu!!![red]'.center(50))
         elif escolha == 2 and computador == 1:
             cont_jogagor +=1
-            print(f'\nVocê escolheu [{escolha}] Papel e o computador escolheu [1] Pedra.')
+            print(f'\nVocê escolheu [{escolha}] Papel:raised_hand: e o computador escolheu [1] Pedra:raised_fist:.')
             sleep(2)
-            print('Você ganhou!!!'.center(50))
+            print('[green]Você ganhou!!![green]'.center(50))
         elif escolha == 3 and computador == 3:
             empate +=1
-            print(f'\nVocê escolheu [{escolha}] Tesoura, e o computador escolheu [3] Tesoura.')
+            print(f'\nVocê escolheu [{escolha}] Tesoura:victory_hand:, e o computador escolheu [3] Tesoura:victory_hand:.')
             sleep(2)
-            print('Deu empate!!!.center(50)')
+            print('[yellow]Deu empate!!![yellow]'.center(50))
         
         elif escolha == 3 and computador == 1:
             cont_computador +=1
-            print(f'\nVocê escolheu [{escolha}] Tesoura, e o computador escolheu [1] Pedra.')
+            print(f'\nVocê escolheu [{escolha}] Tesoura:victory_hand:, e o computador escolheu [1] Pedra:raised_fist:.')
             sleep(2)
-            print ('Você perdeu!!!'.center(50))
+            print ('[red]Você perdeu!!![red]'.center(50))
         elif escolha == 3 and computador == 2:
             cont_jogagor +=1
-            print(f'\nVocê escolheu [{escolha}] Tesoura e o computador escolheu [1] Papel.')
+            print(f'\nVocê escolheu [{escolha}] Tesoura:victory_hand: e o computador escolheu [1] Papel:raised_hand:.')
             sleep(2)
-            print('Você ganhou!!!'.center(50))
+            print('[green]Você ganhou!!![green]'.center(50))
         else:
-            (f'\n Você digitou [{escolha}]. Opção inválida!')
+            print(f'\n Você digitou [{escolha}]. Opção inválida!:confounded_face:')
 
     print(f'''
    { '-'*60}
     ''')
 
-    print(f'\nEm {rodadas} rodada(s)...')
+    print(f'\n[blue]Em {rodadas} rodada(s)...[blue]')
     sleep(2)
-    print(f'''\nVocê venceu {cont_jogagor} rodada(s).
+    print(f'''\n[blue]Você venceu {cont_jogagor} rodada(s).
 Você perdeu {cont_computador} rodada(s).
-Você empatou {empate} rodada(s).
+Você empatou {empate} rodada(s).[blue]
     ''')
     sleep(1)
     if cont_jogagor > cont_computador:
-        print('Você Ganhou!!!'.center(50))
+        print('[green]Você Ganhou!!![green]'.center(50))
     elif cont_computador> cont_jogagor:
-        print('Você Perde!!!'.center(50))
+        print('[red]Você Perde!!![red]'.center(50))
     else:
-        print('Deu Empate!!!'.center(50))
+        print('[yellow]Deu Empate!!![yellow]'.center(50))
 
                         
