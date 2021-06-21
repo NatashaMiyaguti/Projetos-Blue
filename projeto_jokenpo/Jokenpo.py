@@ -1,9 +1,9 @@
 from random import randint
 from time import sleep
-from rich import print
+from rich import print #importa as cores e emotion, somente pode ser usados nos prints
 
 while True:
-    cont_computador = cont_jogagor = empate = 0
+    cont_computador = cont_jogagor = empate = 0  #variadas criadas para fazer as contagens de vitórias/derrotas/empates
 
     jogo = str(input('\nVamos jogar Jokenpo? [S/N]: ')).strip().upper()[0]
     if jogo == 'N':
@@ -29,7 +29,7 @@ while True:
         escolha = int(input('\nQual opção você escolhe:'))
         sleep(1)
         
-        if escolha == 1 and computador == 1:
+        if escolha == computador:
             empate += 1
             print(f'\nVocê escolheu [{escolha}] Pedra:raised_fist:, e o computador escolheu [1] Pedra:raised_fist:.')
             sleep(2)
@@ -45,11 +45,6 @@ while True:
             sleep(2)
             print('[green]Você ganhou!!![green]'.center(50))
         
-        elif escolha == 2 and computador == 2:
-            empate += 1
-            print(f'\nVocê escolheu [{escolha}] Papel:raised_hand:, e o computador escolheu [2] Papel:raised_hand:.')
-            sleep(2)
-            print('[yellow]Deu empate!!![yellow]'.center(50))
         elif escolha == 2 and computador == 3:
             cont_computador +=1
             print(f'\nVocê escolheu [{escolha}] Papel:raised_hand:, e o computador escolheu [3] Tesoura:victory_hand:.')
@@ -60,12 +55,6 @@ while True:
             print(f'\nVocê escolheu [{escolha}] Papel:raised_hand: e o computador escolheu [1] Pedra:raised_fist:.')
             sleep(2)
             print('[green]Você ganhou!!![green]'.center(50))
-        elif escolha == 3 and computador == 3:
-            empate +=1
-            print(f'\nVocê escolheu [{escolha}] Tesoura:victory_hand:, e o computador escolheu [3] Tesoura:victory_hand:.')
-            sleep(2)
-            print('[yellow]Deu empate!!![yellow]'.center(50))
-        
         elif escolha == 3 and computador == 1:
             cont_computador +=1
             print(f'\nVocê escolheu [{escolha}] Tesoura:victory_hand:, e o computador escolheu [1] Pedra:raised_fist:.')
