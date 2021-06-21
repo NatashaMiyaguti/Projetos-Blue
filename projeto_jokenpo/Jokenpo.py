@@ -3,7 +3,7 @@ from time import sleep
 from rich import print #importa as cores e emotion, somente pode ser usados nos prints
 
 while True:
-    cont_computador = cont_jogagor = empate = 0  #variadas criadas para fazer as contagens de vitórias/derrotas/empates
+    cont_computador = cont_jogagor = empate = 0  #variáveis criadas para fazer as contagens de vitórias/derrotas/empates
 
     jogo = str(input('\nVamos jogar Jokenpo? [S/N]: ')).strip().upper()[0]
     if jogo == 'N':
